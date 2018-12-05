@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>LEGALMATION ASSIGNMENT</title>	
+</head>
+   <body>
+   
+      <form id = "upload-form" action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+         <input type = "file" name = "file" accept= ".xml" multiple />
+         <input type = "submit"/>
+      </form>
+      <br>
+      <span><font color="red">{{message}}</font></span>
+      <h1>Result Data</h1>
+      {% for item in pdlf_data %}
+    		<p><span> Plaintiff: {{item.plaintiff}} </span><span>Defendant: {{item.defendant}}</span></p>
+		{% endfor %}
+   </body>
+</html>
